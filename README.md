@@ -81,7 +81,7 @@ prf-acidentes-pipeline/
 
 ---
 
-## Bronze — Preservar antes de transformar
+## Bronze 
 
 A camada Bronze tem uma regra que não pode ser quebrada: **nenhuma transformação no dado**. O objetivo é única e exclusivamente garantir que o dado chegou, foi persistido de forma confiável e pode ser rastreado.
 
@@ -103,7 +103,7 @@ A escrita usa **Delta Lake** com particionamento por `ano_particao`. Delta Lake 
 
 ---
 
-## Silver — Onde mora o trabalho real de engenharia
+## Silver 
 
 A Silver é a camada mais trabalhosa e a mais importante. É aqui que os dados deixam de ser "o que veio da fonte" e passam a ser "o que o time pode confiar". Seis categorias de transformação foram aplicadas:
 
@@ -140,7 +140,7 @@ A Silver é particionada por `ano` e `mes`. Em um cenário com múltiplos anos d
 
 ---
 
-## Gold — Quatro perguntas, quatro tabelas
+## Gold 
 
 Cada tabela Gold responde a uma pergunta de negócio específica. A decisão de criar tabelas separadas em vez de uma tabela única foi intencional: evita joins desnecessários nas queries do dashboard e deixa o contrato de dados explícito para quem consome.
 
